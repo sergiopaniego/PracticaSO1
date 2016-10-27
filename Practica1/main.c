@@ -8,7 +8,7 @@
  * File:   main.c
  * Author: sergiopaniegoblanco
  *
- * Created on October 27, 2016, 1:14 PM
+ * Created on October 27, 2016, 2:19 PM
  */
 
 #include <stdio.h>
@@ -18,6 +18,7 @@
  * 
  */
 int main(int argc, char** argv) {
-    /*PRUEBA3*/
+
     return (EXIT_SUCCESS);
 }
+
