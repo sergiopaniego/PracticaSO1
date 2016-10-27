@@ -18,7 +18,7 @@
  * 
  */
 int main(int argc, char** argv) {
-    /*PRUEBA*/
+    /*PRUEBA2*/
     return (EXIT_SUCCESS);
 }
 
