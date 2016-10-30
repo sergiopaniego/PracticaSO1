@@ -17,41 +17,77 @@
 /*
  * 
  */
+int isHead(char *ce);
+int isTail(char *ce);
+int isLonglines(char *ce);
+
 int main(int argc, char** argv) {
     
-    //Funcion head(N);
-    if (argc == 1) {
-        head(10);
-    } else if (argc == 2) {
-        char *num = argv[1] + 1; //Avanzamos una posición el puntero para saltar el caracter '-'. Recibe los argumentos con un '-'
-        head(atoi(num));
+    if (argc == 2) {
+        //Comprobamos a que metodo pertenece y pintamos 10 lineas
+        if(isHead(argv[1])){
+            head(10);
+        }else if(isTail(argv[1])){
+            tail(10);
+        }else if(isLonglines(argv[1])){
+            longlines(10);
+        }else {
+            printf("Uso: \"%s -nombreFuncion -N\" para ver N líneas, o \"%s -nombreFuncion\" para ver 10 líneas\n", argv[0], argv[0]);
+            return 1;
+        }
+    } else if (argc == 3) {
+        char *num = argv[2] + 1; //Avanzamos una posición el puntero para saltar el caracter '-'. Recibe los argumentos con un '-'
+        //Comprobamos a que metodo pertenece y pintamos N lineas
+        if(isHead(argv[1])){
+            head(atoi(num));
+        }else if(isTail(argv[1])){
+            tail(atoi(num));
+        }else if(isLonglines(argv[1])){
+            longlines(atoi(num));
+        }else {
+            printf("Uso: \"%s -nombreFuncion -N\" para ver N líneas, o \"%s -nombreFuncion\" para ver 10 líneas\n", argv[0], argv[0]);
+            return 1;
+        }
     } else {
-        printf("Uso: \"%s -N\" para ver las N primeras líneas, o \"%s\" para las 10 primeras líneas\n", argv[0], argv[0]);
+        printf("Uso: \"%s -nombreFuncion -N\" para ver N líneas, o \"%s -nombreFuncion\" para ver 10 líneas\n", argv[0], argv[0]);
         return 1;
     }
-/*   
-    //Funcion tail(N);
-    if (argc == 1) {
-        tail(10);
-    } else if (argc == 2) {
-        char *num = argv[1] + 1; //Avanzamos una posición el puntero para saltar el caracter '-'. Recibe los argumentos con un '-'
-        tail(atoi(num));
-    } else {
-        printf("Uso: \"%s -N\" para ver las N últimas líneas, o \"%s\" para las 10 ultimas líneas\n", argv[0], argv[0]);
-        return 1;
-    }
+
     
-    //Funcion longlines(N);
-    if (argc == 1) {
-        longlines(10);
-    } else if (argc == 2) {
-        char *num = argv[1] + 1; //Avanzamos una posición el puntero para saltar el caracter '-'. Recibe los argumentos con un '-'
-        longlines(atoi(num));
-    } else {
-        printf("Uso: \"%s -N\" para ver las N líneas más largas, o \"%s\" para las 10 líneas más largas\n", argv[0], argv[0]);
-        return 1;
-    }
- */
     return (EXIT_SUCCESS);
 }
+
+int isHead(char *ce){
+    char *num0=ce+1;
+    char *num1=ce+2;
+    char *num2=ce+3;
+    char *num3=ce+4;
+    
+    return (*num0=='h')&&(*num1=='e')&&(*num2=='a')&&(*num3=='d');
+}
+
+int isTail(char *ce){
+    char *num0=ce+1;
+    char *num1=ce+2;
+    char *num2=ce+3;
+    char *num3=ce+4;
+    
+    return (*num0=='t')&&(*num1=='a')&&(*num2=='i')&&(*num3=='l');
+}
+
+int isLonglines(char *ce){
+    char *num0=ce+1;
+    char *num1=ce+2;
+    char *num2=ce+3;
+    char *num3=ce+4;
+    char *num4=ce+5;
+    char *num5=ce+6;
+    char *num6=ce+7;
+    char *num7=ce+8;
+    char *num8=ce+9;
+    
+    return (*num0=='l')&&(*num1=='o')&&(*num2=='n')&&(*num3=='g')&&(*num4=='l')&&(*num5=='i')&&(*num6=='n')&&(*num7=='e')&&(*num8=='s');
+}
+
+
 
