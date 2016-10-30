@@ -62,8 +62,9 @@ int isHead(char *ce){
     char *num1=ce+2;
     char *num2=ce+3;
     char *num3=ce+4;
+    char *num4=ce+5;
     
-    return (*num0=='h')&&(*num1=='e')&&(*num2=='a')&&(*num3=='d');
+    return (*num0=='h')&&(*num1=='e')&&(*num2=='a')&&(*num3=='d')&&(*num4=='\0');
 }
 
 int isTail(char *ce){
@@ -71,8 +72,9 @@ int isTail(char *ce){
     char *num1=ce+2;
     char *num2=ce+3;
     char *num3=ce+4;
+    char *num4=ce+5;
     
-    return (*num0=='t')&&(*num1=='a')&&(*num2=='i')&&(*num3=='l');
+    return (*num0=='t')&&(*num1=='a')&&(*num2=='i')&&(*num3=='l')&&(*num4=='\0');
 }
 
 int isLonglines(char *ce){
@@ -85,8 +87,9 @@ int isLonglines(char *ce){
     char *num6=ce+7;
     char *num7=ce+8;
     char *num8=ce+9;
+    char *num9=ce+10;
     
-    return (*num0=='l')&&(*num1=='o')&&(*num2=='n')&&(*num3=='g')&&(*num4=='l')&&(*num5=='i')&&(*num6=='n')&&(*num7=='e')&&(*num8=='s');
+    return (*num0=='l')&&(*num1=='o')&&(*num2=='n')&&(*num3=='g')&&(*num4=='l')&&(*num5=='i')&&(*num6=='n')&&(*num7=='e')&&(*num8=='s')&&(*num9=='\0');
 }
 
 
