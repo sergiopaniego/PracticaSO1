@@ -28,8 +28,8 @@ int tail(int N) {
     nlineas=N;
     //Reservamos espacio para las N lineas
     char ** lineas = (char**) malloc (N*sizeof(char*));
-    
-    for(int i=0; i<N; i++){
+    int i;
+    for( i=0; i<N; i++){
         lineas[i]=(char*) malloc (1024*sizeof(char));
     }
     //Nos quedamos con las últimas N lineas despues de la lectura de todas las que se nos pasan
@@ -38,18 +38,20 @@ int tail(int N) {
         strcpy(lineas[j], buf);
         j++;  
         }else{
-            for(int x=0; x<N-1; x++){
+        int x;
+            for( x=0; x<N-1; x++){
                 strcpy(lineas[x], lineas[x+1]);
             }
             strcpy(lineas[N-1], buf);
         }
     }
     //Imprimimos el resultado por consola
-    for(int k=0; k<N; k++){
+    int k;
+    for( k=0; k<N; k++){
         printf("%s", lineas[k]);
     }
     //Liberamos la memoria utilizada
-    for(int i=0; i<N; i++){
+    for( i=0; i<N; i++){
         free(lineas[i]);
     }
     free(lineas);
@@ -99,7 +101,8 @@ int longlines(int N) {
     nlineas=N;
     //Reservamos espacio para las N líneas
     char** lineas=(char**) malloc (N*sizeof(char*));
-    for(int i=0;i<N;i++){
+    int i;
+    for( i=0;i<N;i++){
         lineas[i]=(char*) malloc (1024*sizeof(char*));
     }
     //Rellenamos el array con las líneas hasta que se vacie el buffer, recorriendolo entero
@@ -122,13 +125,16 @@ int longlines(int N) {
         }
     }
     //Imprimimos el resultado por consola
-    for(int k=0; k<N; k++){
+    int k;
+    for( k=0; k<N; k++){
         printf("%s", lineas[k]);
     }
     //Liberamos la memoria utilizada
-    for(int i=0; i<N; i++){
+    for( i=0; i<N; i++){
         free(lineas[i]);
     }
     free(lineas);
     return 0;
 }
+
+
